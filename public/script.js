@@ -211,15 +211,15 @@ window.addEventListener("scroll", function() {
     if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + document.querySelector("#skills").offsetHeight) {    
         document.querySelector("#background-color").style.width = "100%";
         document.querySelector("#background-color").style.height = "100%";
-        document.querySelector("#skills-techincal-skills-soft-skills").style.top = "50%";
-        document.querySelector("#skills-techincal-skills-soft-skills").style.transform = "translate(-50%, -50%)";  
+        document.querySelector("#skills-techincal-soft").style.top = "50%";
+        document.querySelector("#skills-techincal-soft").style.transform = "translate(-50%, -50%)";  
         document.querySelector("#content").style.transform = "translate(0px, " + (window.scrollY - (document.querySelector("#home").offsetHeight * 2)) + "px)";
         document.querySelector("#download-resume").style.opacity = "1";
     } else if(window.scrollY < (document.querySelector("#home").offsetHeight * 2) + ((document.querySelector("#about-me").offsetHeight / 7) * 7)) {    
         document.querySelector("#background-color").style.width = "0%";
         document.querySelector("#background-color").style.height = "0%";
-        document.querySelector("#skills-techincal-skills-soft-skills").style.top = "100%";
-        document.querySelector("#skills-techincal-skills-soft-skills").style.transform = "translate(-50%, 0%)";
+        document.querySelector("#skills-techincal-soft").style.top = "100%";
+        document.querySelector("#skills-techincal-soft").style.transform = "translate(-50%, 0%)";
         document.querySelector("#download-resume").style.opacity = "0";
     } else {
         document.querySelector("#download-resume").style.opacity = "0";
@@ -347,6 +347,7 @@ window.addEventListener("scroll", function() {
     document.querySelector(".modal:nth-child(1)").style.display = "none";
     document.querySelector(".modal:nth-child(2)").style.display = "none";
     document.querySelector(".modal:nth-child(3)").style.display = "none";
+    document.querySelector(".modal:nth-child(3) > iframe").src = document.querySelector(".modal:nth-child(3) > iframe").src;
     document.querySelector(".modal:nth-child(4)").style.display = "none";
 });
 function cardFlip180Deg(card) {
@@ -397,18 +398,26 @@ document.querySelector("#open-certifications").addEventListener("click", functio
 });
 document.querySelector("#modals").addEventListener("click", function(event) {
     if(event.target == document.querySelector("#modals")) {
-    document.querySelector("#open-education").style.boxShadow = "2.5px 2.5px 5px black";
-    document.querySelector("#open-education").style.transform = "none";
-    document.querySelector("#open-relevant-experiences").style.boxShadow = "2.5px 2.5px 5px black";
-    document.querySelector("#open-relevant-experiences").style.transform = "none";
-    document.querySelector("#open-introduction-video").style.boxShadow = "2.5px 2.5px 5px black";
-    document.querySelector("#open-introduction-video").style.transform = "none";
-    document.querySelector("#open-certifications").style.boxShadow = "2.5px 2.5px 5px black";
-    document.querySelector("#open-certifications").style.transform = "none";
+        document.querySelector("#open-education").style.boxShadow = "2.5px 2.5px 5px black";
+        document.querySelector("#open-education").style.transform = "none";
+        document.querySelector("#open-relevant-experiences").style.boxShadow = "2.5px 2.5px 5px black";
+        document.querySelector("#open-relevant-experiences").style.transform = "none";
+        document.querySelector("#open-introduction-video").style.boxShadow = "2.5px 2.5px 5px black";
+        document.querySelector("#open-introduction-video").style.transform = "none";
+        document.querySelector("#open-certifications").style.boxShadow = "2.5px 2.5px 5px black";
+        document.querySelector("#open-certifications").style.transform = "none";
         document.querySelector("#modals").style.display = "none";
         document.querySelector(".modal:nth-child(1)").style.display = "none";
         document.querySelector(".modal:nth-child(2)").style.display = "none";
         document.querySelector(".modal:nth-child(3)").style.display = "none";
+        document.querySelector(".modal:nth-child(3) > iframe").src = document.querySelector(".modal:nth-child(3) > iframe").src;
         document.querySelector(".modal:nth-child(4)").style.display = "none";
     }
 });
+window.addEventListener('wheel', function(event) {
+    event.preventDefault();
+    window.scrollBy({
+        top: event.deltaY * 0.5,
+        behavior: 'auto'
+    });
+}, { passive: false });
