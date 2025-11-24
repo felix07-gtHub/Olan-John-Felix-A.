@@ -750,6 +750,11 @@ font-weight: bold;
     position: absolute;
     bottom: -39.6px;
     right: -39.6px;
+    transition: transform 0.05s linear;
+}
+
+#contact input[type="image"]:hover {
+    transform: scale(1.05);
 }
 
 #modals {
