@@ -335,6 +335,14 @@ window.addEventListener("scroll", function() {
         document.querySelector("#social-links").style.opacity = "0";
         document.querySelector("#contact > form").style.opacity = "0";
     }
+    document.querySelector("#open-education").style.boxShadow = "2.5px 2.5px 5px black";
+    document.querySelector("#open-education").style.transform = "none";
+    document.querySelector("#open-relevant-experiences").style.boxShadow = "2.5px 2.5px 5px black";
+    document.querySelector("#open-relevant-experiences").style.transform = "none";
+    document.querySelector("#open-introduction-video").style.boxShadow = "2.5px 2.5px 5px black";
+    document.querySelector("#open-introduction-video").style.transform = "none";
+    document.querySelector("#open-certifications").style.boxShadow = "2.5px 2.5px 5px black";
+    document.querySelector("#open-certifications").style.transform = "none";
     document.querySelector("#modals").style.display = "none";
     document.querySelector(".modal:nth-child(1)").style.display = "none";
     document.querySelector(".modal:nth-child(2)").style.display = "none";
