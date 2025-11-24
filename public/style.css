@@ -85,11 +85,13 @@ body {
 
 #name > p {
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #name > h1 {
     font-size: 80px;
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #background-image-name-introduction > p {
@@ -98,6 +100,7 @@ body {
     margin-left: auto;
     position: relative;
     text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
     opacity: 0;
     transition: opacity 0.25s linear 0.25s;
 }
