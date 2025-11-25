@@ -1,22 +1,77 @@
 window.addEventListener("scroll", function() {
-    if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) && window.scrollY + document.querySelector("#contact").offsetHeight < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + (document.querySelector("#testimonials").offsetHeight * 2) + (document.querySelector("#projects").offsetHeight * 2)) {    
-        document.querySelector("#navigation").style.background = "rgba(255, 255, 255, 0.25)";
-        document.querySelector("#navigation > h1").style.color = "white";
-        document.querySelector("#navigation > a:nth-child(2)").style.color = "white";
-        document.querySelector("#navigation > a:nth-child(3)").style.color = "white";
-        document.querySelector("#navigation > a:nth-child(4)").style.color = "white";
-        document.querySelector("#navigation > a:nth-child(5)").style.color = "white";
-        document.querySelector("#navigation > a:nth-child(6)").style.color = "white";
-        document.querySelector("#navigation > a:nth-child(7)").style.color = "white";
+    if(window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2)) {
+        document.querySelector("#navigation").style.background = "rgba(0, 0, 0, 0.25)";    
+        document.querySelector("#navigation > h1").style.color = "black";   
+        document.querySelector("#navigation > button:nth-child(2)").style.color = "black";   
+        document.querySelector("#navigation > button:nth-child(3)").style.color = "black";   
+        document.querySelector("#navigation > button:nth-child(4)").style.color = "black";   
+        document.querySelector("#navigation > button:nth-child(5)").style.color = "black";   
+        document.querySelector("#navigation > button:nth-child(6)").style.color = "black";   
+        document.querySelector("#navigation > button:nth-child(7)").style.color = "black";   
+        document.querySelector("#rounded-corner-rectangle").style.background = "black";   
+        if(window.scrollY < document.querySelector("#home").offsetHeight * 2) {
+            document.querySelector("#navigation > button:nth-child(2)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(3)").style.color = "black";   
+            document.querySelector("#navigation > button:nth-child(4)").style.color = "black";   
+            document.querySelector("#navigation > button:nth-child(5)").style.color = "black";   
+            document.querySelector("#navigation > button:nth-child(6)").style.color = "black";   
+            document.querySelector("#navigation > button:nth-child(7)").style.color = "black";   
+            document.querySelector("#rounded-corner-rectangle").style.transform = "translate(0%, 0%)";
+        } else if(window.scrollY > document.querySelector("#home").offsetHeight * 2 && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2)) {
+            document.querySelector("#navigation > button:nth-child(2)").style.color = "black";   
+            document.querySelector("#navigation > button:nth-child(3)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(4)").style.color = "black";   
+            document.querySelector("#navigation > button:nth-child(5)").style.color = "black";   
+            document.querySelector("#navigation > button:nth-child(6)").style.color = "black";   
+            document.querySelector("#navigation > button:nth-child(7)").style.color = "black";   
+            document.querySelector("#rounded-corner-rectangle").style.transform = "translate(100%, 0%)";
+        }
+    } else if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) && Math.ceil(window.scrollY + window.innerHeight) < document.documentElement.scrollHeight) { 
+        document.querySelector("#navigation").style.background = "rgba(255, 255, 255, 0.25)";  
+        document.querySelector("#navigation > h1").style.color = "white";     
+        document.querySelector("#navigation > button:nth-child(2)").style.color = "white";   
+        document.querySelector("#navigation > button:nth-child(3)").style.color = "white";   
+        document.querySelector("#navigation > button:nth-child(4)").style.color = "white";   
+        document.querySelector("#navigation > button:nth-child(5)").style.color = "white";   
+        document.querySelector("#navigation > button:nth-child(6)").style.color = "white";   
+        document.querySelector("#navigation > button:nth-child(7)").style.color = "white";   
+        document.querySelector("#rounded-corner-rectangle").style.background = "white";   
+        if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2)) {
+            document.querySelector("#navigation > button:nth-child(2)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(3)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(4)").style.color = "black";   
+            document.querySelector("#navigation > button:nth-child(5)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(6)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(7)").style.color = "white";       
+            document.querySelector("#rounded-corner-rectangle").style.transform = "translate(200%, 0%)";
+        } else if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + (document.querySelector("#testimonials").offsetHeight * 2)) {    
+            document.querySelector("#navigation > button:nth-child(2)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(3)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(4)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(5)").style.color = "black";   
+            document.querySelector("#navigation > button:nth-child(6)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(7)").style.color = "white";       
+            document.querySelector("#rounded-corner-rectangle").style.transform = "translate(300%, 0%)";
+        } else if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + (document.querySelector("#testimonials").offsetHeight * 2) && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + (document.querySelector("#testimonials").offsetHeight * 2) + (document.querySelector("#projects").offsetHeight * 2)) {
+            document.querySelector("#navigation > button:nth-child(2)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(3)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(4)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(5)").style.color = "white";   
+            document.querySelector("#navigation > button:nth-child(6)").style.color = "black";   
+            document.querySelector("#navigation > button:nth-child(7)").style.color = "white";       
+            document.querySelector("#rounded-corner-rectangle").style.transform = "translate(400%, 0%)";
+        }
     } else {
-        document.querySelector("#navigation").style.background = "rgba(0, 0, 0, 0.25)";
-        document.querySelector("#navigation > h1").style.color = "black";
-        document.querySelector("#navigation > a:nth-child(2)").style.color = "black";
-        document.querySelector("#navigation > a:nth-child(3)").style.color = "black";
-        document.querySelector("#navigation > a:nth-child(4)").style.color = "black";
-        document.querySelector("#navigation > a:nth-child(5)").style.color = "black";
-        document.querySelector("#navigation > a:nth-child(6)").style.color = "black";
-        document.querySelector("#navigation > a:nth-child(7)").style.color = "black";
+        document.querySelector("#navigation").style.background = "rgba(0, 0, 0, 0.25)"; 
+        document.querySelector("#navigation > h1").style.color = "black";   
+        document.querySelector("#navigation > button:nth-child(2)").style.color = "black";   
+        document.querySelector("#navigation > button:nth-child(3)").style.color = "black";   
+        document.querySelector("#navigation > button:nth-child(4)").style.color = "black";   
+        document.querySelector("#navigation > button:nth-child(5)").style.color = "black";   
+        document.querySelector("#navigation > button:nth-child(6)").style.color = "black";   
+        document.querySelector("#navigation > button:nth-child(7)").style.color = "white";   
+        document.querySelector("#rounded-corner-rectangle").style.background = "black";   
+        document.querySelector("#rounded-corner-rectangle").style.transform = "translate(500%, 0%)";
     }
     if(window.scrollY < document.querySelector("#home").offsetHeight) {
         document.querySelector("#content").style.transform = "translate(0px, " + window.scrollY + "px)";
@@ -33,9 +88,8 @@ window.addEventListener("scroll", function() {
     } else {
         document.querySelector("#scroll-down").style.opacity = "0";
     }
-    if(window.scrollY > document.querySelector("#home").offsetHeight && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + ((document.querySelector("#about-me").offsetHeight / 7) * 7)) {
-        document.querySelector("#list").style.height = "100%";
-        if(window.scrollY > document.querySelector("#home").offsetHeight && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + ((document.querySelector("#about-me").offsetHeight / 7) * 1)) {
+    if(window.scrollY > document.querySelector("#home").offsetHeight * 2 && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + ((document.querySelector("#about-me").offsetHeight / 7) * 7)) {
+        if(window.scrollY > document.querySelector("#home").offsetHeight * 2 && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + ((document.querySelector("#about-me").offsetHeight / 7) * 1)) {
             document.querySelector("#list > .item:nth-child(1)").style.height = "100%";
             document.querySelector("#list > .item:nth-child(1) > .image").style.height = "100%";
             document.querySelector("#list > .item:nth-child(2)").style.height = document.querySelector("#list p").offsetHeight + (parseFloat(window.getComputedStyle(document.querySelector("#list p")).margin.split(" ")[0].replace(/\D/g, "")) * 2) + "px";
@@ -207,6 +261,30 @@ window.addEventListener("scroll", function() {
         if(window.scrollY > document.querySelector("#home").offsetHeight * 2 && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + ((document.querySelector("#about-me").offsetHeight / 7) * 7)) {
             document.querySelector("#content").style.transform = "translate(0px, " + (window.scrollY - document.querySelector("#home").offsetHeight) + "px)";
         }
+    } else if(window.scrollY < document.querySelector("#home").offsetHeight * 2) {
+        document.querySelector("#list > .item:nth-child(1)").style.height = document.querySelector("#list p").offsetHeight + (parseFloat(window.getComputedStyle(document.querySelector("#list p")).margin.split(" ")[0].replace(/\D/g, "")) * 2) + "px";
+        document.querySelector("#list > .item:nth-child(1) > .image").style.height = "0%";
+        document.querySelector("#list > .item:nth-child(2)").style.height = document.querySelector("#list p").offsetHeight + (parseFloat(window.getComputedStyle(document.querySelector("#list p")).margin.split(" ")[0].replace(/\D/g, "")) * 2) + "px";
+        document.querySelector("#list > .item:nth-child(2) > .image").style.height = "0%";
+        document.querySelector("#list > .item:nth-child(3)").style.height = document.querySelector("#list p").offsetHeight + (parseFloat(window.getComputedStyle(document.querySelector("#list p")).margin.split(" ")[0].replace(/\D/g, "")) * 2) + "px";
+        document.querySelector("#list > .item:nth-child(3) > .image").style.height = "0%";
+        document.querySelector("#list > .item:nth-child(4)").style.height = document.querySelector("#list p").offsetHeight + (parseFloat(window.getComputedStyle(document.querySelector("#list p")).margin.split(" ")[0].replace(/\D/g, "")) * 2) + "px";
+        document.querySelector("#list > .item:nth-child(4) > .image").style.height = "0%";
+        document.querySelector("#list > .item:nth-child(5)").style.height = document.querySelector("#list p").offsetHeight + (parseFloat(window.getComputedStyle(document.querySelector("#list p")).margin.split(" ")[0].replace(/\D/g, "")) * 2) + "px";
+        document.querySelector("#list > .item:nth-child(5) > .image").style.height = "0%";
+        document.querySelector("#list > .item:nth-child(6)").style.height = document.querySelector("#list p").offsetHeight + (parseFloat(window.getComputedStyle(document.querySelector("#list p")).margin.split(" ")[0].replace(/\D/g, "")) * 2) + "px";
+        document.querySelector("#list > .item:nth-child(6) > .image").style.height = "0%";
+        document.querySelector("#list > .item:nth-child(7)").style.height = document.querySelector("#list p").offsetHeight + (parseFloat(window.getComputedStyle(document.querySelector("#list p")).margin.split(" ")[0].replace(/\D/g, "")) * 2) + "px";
+        document.querySelector("#list > .item:nth-child(7) > .image").style.height = "0%";
+        document.querySelector("#mask").style.height = "0px";
+        document.querySelector("#mask").style.transform = "translate(0px, 0px)";
+        document.querySelector("#items .item:nth-child(1)").style.transform = "translate(0%, 0%)";
+        document.querySelector("#items .item:nth-child(2)").style.transform = "translate(0%, 0%)";
+        document.querySelector("#items .item:nth-child(3)").style.transform = "translate(0%, 0%)";
+        document.querySelector("#items .item:nth-child(4)").style.transform = "translate(0%, 0%)";
+        document.querySelector("#items .item:nth-child(5)").style.transform = "translate(0%, 0%)";
+        document.querySelector("#items .item:nth-child(6)").style.transform = "translate(0%, 0%)";
+        document.querySelector("#items .item:nth-child(7)").style.transform = "translate(0%, 0%)";
     }
     if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + document.querySelector("#skills").offsetHeight) {    
         document.querySelector("#background-color").style.width = "100%";
@@ -215,7 +293,7 @@ window.addEventListener("scroll", function() {
         document.querySelector("#skills-techincal-soft").style.transform = "translate(-50%, -50%)";  
         document.querySelector("#content").style.transform = "translate(0px, " + (window.scrollY - (document.querySelector("#home").offsetHeight * 2)) + "px)";
         document.querySelector("#download-resume").style.opacity = "1";
-    } else if(window.scrollY < (document.querySelector("#home").offsetHeight * 2) + ((document.querySelector("#about-me").offsetHeight / 7) * 7)) {    
+    } else if(window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) && window.scrollY > (document.querySelector("#home").offsetHeight * 2) + ((document.querySelector("#about-me").offsetHeight / 7) * 7)) {    
         document.querySelector("#background-color").style.width = "0%";
         document.querySelector("#background-color").style.height = "0%";
         document.querySelector("#skills-techincal-soft").style.top = "100%";
@@ -233,18 +311,18 @@ window.addEventListener("scroll", function() {
     if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + document.querySelector("#testimonials").offsetHeight) {    
         document.querySelector(".testimonial:nth-child(1)").style.transform = "translate(0%, 0%)";
         document.querySelector(".testimonial:nth-child(1)").style.opacity = "1";
-        document.querySelector("#testimonials-round-corner-rectangle > h1").style.transform = "translate(0%, 0%)";
-        document.querySelector("#testimonials-round-corner-rectangle > h1").style.opacity = "1";
-        document.querySelector("#round-corner-rectangle").style.transform = "translate(0%, 0%)";
-        document.querySelector("#round-corner-rectangle").style.opacity = "1";
+        document.querySelector("#testimonials-gradient > h1").style.transform = "translate(0%, 0%)";
+        document.querySelector("#testimonials-gradient > h1").style.opacity = "1";
+        document.querySelector("#gradient").style.transform = "translate(0%, 0%)";
+        document.querySelector("#gradient").style.opacity = "1";
         document.querySelector("#content").style.transform = "translate(0px, " + (window.scrollY - ((document.querySelector("#home").offsetHeight * 2) + document.querySelector("#about-me").offsetHeight)) + "px)";
     } else if(window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + document.querySelector("#testimonials").offsetHeight) {    
        document.querySelector(".testimonial:nth-child(1)").style.transform = "translate(0%, 100%)";
         document.querySelector(".testimonial:nth-child(1)").style.opacity = "0";
-        document.querySelector("#testimonials-round-corner-rectangle > h1").style.transform = "translate(-10%, 0%)";
-        document.querySelector("#testimonials-round-corner-rectangle > h1").style.opacity = "0";
-        document.querySelector("#round-corner-rectangle").style.transform = "translate(-100%, 0%)";
-        document.querySelector("#round-corner-rectangle").style.opacity = "0";
+        document.querySelector("#testimonials-gradient > h1").style.transform = "translate(-10%, 0%)";
+        document.querySelector("#testimonials-gradient > h1").style.opacity = "0";
+        document.querySelector("#gradient").style.transform = "translate(-100%, 0%)";
+        document.querySelector("#gradient").style.opacity = "0";
     }
     if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + document.querySelector("#testimonials").offsetHeight && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + (document.querySelector("#testimonials").offsetHeight * 2)) {    
         document.querySelector("#skills .background-image").style.transform = "translate(" + (0 - (document.querySelector("#skills .background-image").offsetWidth / 2)) + "px, " + (((0 - (document.querySelector("#skills .background-image").offsetHeight / 2))) + (window.scrollY - ((document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2)))) + "px)";
@@ -326,7 +404,7 @@ window.addEventListener("scroll", function() {
     if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + (document.querySelector("#testimonials").offsetHeight * 2) + document.querySelector("#projects").offsetHeight && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + (document.querySelector("#testimonials").offsetHeight * 2) + (document.querySelector("#projects").offsetHeight * 2)) {    
         document.querySelector("#skills .background-image").style.transform = "translate(" + (0 - (document.querySelector("#skills .background-image").offsetWidth / 2)) + "px, " + (((0 - (document.querySelector("#skills .background-image").offsetHeight / 2))) + (window.scrollY - ((document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + document.querySelector("#testimonials").offsetHeight))) + "px)";
     }
-    if(window.scrollY + document.querySelector("#contact").offsetHeight > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + (document.querySelector("#testimonials").offsetHeight * 2) + (document.querySelector("#projects").offsetHeight * 2)) { 
+    if(Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight) { 
         document.querySelector("#contact > .background-image").style.opacity = "1";
         document.querySelector("#social-links").style.opacity = "1";
         document.querySelector("#contact > form").style.opacity = "1";
@@ -417,7 +495,8 @@ document.querySelector("#modals").addEventListener("click", function(event) {
 window.addEventListener('wheel', function(event) {
     event.preventDefault();
     window.scrollBy({
-        top: event.deltaY * 0.5,
+        top: event.deltaY * 0.25,
+        left: 0,
         behavior: 'auto'
     });
 }, { passive: false });
