@@ -1,9 +1,4 @@
 window.addEventListener("scroll", function() {
-    if(window.scrollY >= (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + document.querySelector("#skills").offsetHeight && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + (document.querySelector("#testimonials").offsetHeight * 2) + ((document.querySelector("#projects").offsetHeight / 5) * 5)) {
-        document.querySelector("#content").style.background = "black";
-    } else {
-        document.querySelector("#content").style.background = "white";
-    }
     if(window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2)) {
         document.querySelector("#navigation").style.background = "rgba(0, 0, 0, 0.25)";    
         document.querySelector("#navigation > h1").style.color = "black";   
