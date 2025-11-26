@@ -1,4 +1,9 @@
 window.addEventListener("scroll", function() {
+    if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + document.querySelector("#skills").offsetHeight && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + (document.querySelector("#testimonials").offsetHeight * 2) + ((document.querySelector("#projects").offsetHeight / 5) * 5)) {
+        document.querySelector("#content").style.background = "black";
+    } else {
+        document.querySelector("#content").style.background = "white";
+    }
     if(window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2)) {
         document.querySelector("#navigation").style.background = "rgba(0, 0, 0, 0.25)";    
         document.querySelector("#navigation > h1").style.color = "black";   
@@ -84,9 +89,6 @@ window.addEventListener("scroll", function() {
             document.querySelector("#name").style.opacity = "0";
             document.querySelector("#background-image-name-introduction > p").style.opacity = "0";
         }
-        document.querySelector("#scroll-down").style.opacity = "1";
-    } else {
-        document.querySelector("#scroll-down").style.opacity = "0";
     }
     if(window.scrollY > document.querySelector("#home").offsetHeight * 2 && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + ((document.querySelector("#about-me").offsetHeight / 7) * 7)) {
         if(window.scrollY > document.querySelector("#home").offsetHeight * 2 && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + ((document.querySelector("#about-me").offsetHeight / 7) * 1)) {
@@ -292,15 +294,11 @@ window.addEventListener("scroll", function() {
         document.querySelector("#skills-techincal-soft").style.top = "50%";
         document.querySelector("#skills-techincal-soft").style.transform = "translate(-50%, -50%)";  
         document.querySelector("#content").style.transform = "translate(0px, " + (window.scrollY - (document.querySelector("#home").offsetHeight * 2)) + "px)";
-        document.querySelector("#download-resume").style.opacity = "1";
     } else if(window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) && window.scrollY > (document.querySelector("#home").offsetHeight * 2) + ((document.querySelector("#about-me").offsetHeight / 7) * 7)) {    
         document.querySelector("#background-color").style.width = "0%";
         document.querySelector("#background-color").style.height = "0%";
         document.querySelector("#skills-techincal-soft").style.top = "100%";
         document.querySelector("#skills-techincal-soft").style.transform = "translate(-50%, 0%)";
-        document.querySelector("#download-resume").style.opacity = "0";
-    } else {
-        document.querySelector("#download-resume").style.opacity = "0";
     }
     if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + document.querySelector("#skills").offsetHeight && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2)) {
         document.querySelector("#skills #background-color").style .overflow = "visible";
@@ -427,6 +425,69 @@ window.addEventListener("scroll", function() {
     document.querySelector(".modal:nth-child(3)").style.display = "none";
     document.querySelector(".modal:nth-child(3) > iframe").src = document.querySelector(".modal:nth-child(3) > iframe").src;
     document.querySelector(".modal:nth-child(4)").style.display = "none";
+    if(window.scrollY < document.querySelector("#home").offsetHeight) {
+        document.querySelector("#action").style.background = "rgba(0, 0, 0, 0.25)";
+        document.querySelector("#action").style.opacity = "1";
+        document.querySelector("#scroll-down").style.display = "flex";
+        document.querySelector("#download-resume").style.display = "none";
+        document.querySelector("#flip-the-card").style.display = "none";
+    } else if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + document.querySelector("#testimonials").offsetHeight) {
+        document.querySelector("#action").style.background = "rgba(255, 255, 255, 0.25)";
+        document.querySelector("#action").style.opacity = "1";
+        if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2)) {
+            document.querySelector("#scroll-down").style.display = "none";
+            document.querySelector("#download-resume").style.display = "flex";
+            document.querySelector("#flip-the-card").style.display = "none";
+        } else if(window.scrollY > (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) && window.scrollY < (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + document.querySelector("#testimonials").offsetHeight) {
+            document.querySelector("#scroll-down").style.display = "none";
+            document.querySelector("#download-resume").style.display = "none";
+            document.querySelector("#flip-the-card").style.display = "flex";
+        }
+    } else {
+        document.querySelector("#action").style.opacity = "0";
+    }
+});
+document.querySelector("#navigation > button:nth-child(2)").addEventListener("click", function() {
+    window.scrollTo({
+        top: document.querySelector("#home").offsetHeight / 3,
+        left: 0,
+        behavior: "smooth"
+    });
+});
+document.querySelector("#navigation > button:nth-child(3)").addEventListener("click", function() {
+    window.scrollTo({
+        top: (document.querySelector("#home").offsetHeight * 2) + 1,
+        left: 0,
+        behavior: "smooth"
+    });
+});
+document.querySelector("#navigation > button:nth-child(4)").addEventListener("click", function() {
+    window.scrollTo({
+        top: (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + 1,
+        left: 0,
+        behavior: "smooth"
+    });
+});
+document.querySelector("#navigation > button:nth-child(5)").addEventListener("click", function() {
+    window.scrollTo({
+        top: (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + 1,
+        left: 0,
+        behavior: "smooth"
+    });
+});
+document.querySelector("#navigation > button:nth-child(6)").addEventListener("click", function() {
+    window.scrollTo({
+        top: (document.querySelector("#home").offsetHeight * 2) + (document.querySelector("#about-me").offsetHeight * 2) + (document.querySelector("#skills").offsetHeight * 2) + (document.querySelector("#testimonials").offsetHeight * 2) + 1,
+        left: 0,
+        behavior: "smooth"
+    });
+});
+document.querySelector("#navigation > button:nth-child(7)").addEventListener("click", function() {
+    window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        left: 0,
+        behavior: "smooth"
+    });
 });
 function cardFlip180Deg(card) {
     card.style.background = "white";
