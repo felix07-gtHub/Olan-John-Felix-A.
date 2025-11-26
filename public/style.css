@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     justify-items: center;
+    height: 1100vh;
 }
 
 #content {
@@ -38,6 +39,7 @@ body {
     width: 104px;
     background: none;
     border: none;
+    cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
     transition: color 0.25s linear;
 }
@@ -62,7 +64,6 @@ body {
     height: 100vh;
     justify-items: center;
     align-content: center;
-    background: white;
     position: relative;
 }
 
@@ -119,35 +120,11 @@ body {
     transition: opacity 0.25s linear 0.25s;
 }
 
-#scroll-down {
-    position: absolute;
-    bottom: 10px;
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.25);
-    transition: opacity 0.25s linear;
-}
-
-#scroll-down > img {
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-}
-
-#scroll-down > p {
-    margin: 5px;
-    font-size: 13px;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 #about-me {
     width: 100%;
     height: 100vh;
     justify-items: center;
     align-content: center;
-    background: white;
     position: relative;
 }
 
@@ -277,7 +254,6 @@ font-weight: bold;
     width: 100%;    
     justify-items: center;
     align-content: center;
-    background: white;
     position: relative;
 }
 
@@ -392,34 +368,6 @@ font-weight: bold;
 #soft-list li {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-#download-resume {
-    position: absolute;
-    bottom: 10px;
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.25);
-    border: none;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    opacity: 0;
-    transition: opacity 0.25s linear;
-    cursor: pointer;
-}
-
-#download-resume > img {
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-}
-
-#download-resume:hover {
-    background: white;
-    color: black;
 }
 
 #testimonials {
@@ -830,4 +778,84 @@ font-weight: bold;
 .modal > iframe {
     width: 640px;
     height: 480px;
+}
+
+#action {
+    height: 39.6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    transition: opacity 0.25s linear, background 0.25s linear;
+}
+
+#scroll-down {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#scroll-down > img {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+#scroll-down > p {
+    margin: 5px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#download-resume {
+    height: 100%;
+    display: none;
+    align-items: center;
+    border-radius: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#download-resume:hover {
+    background: white;
+}
+
+#download-resume > img {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+#download-resume > p {
+    margin: 5px;
+    font-size: 13px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#download-resume:hover > p {
+    color: black;
+}
+
+#flip-the-card {
+    height: 100%;
+    display: none;
+    align-items: center;
+}
+
+#flip-the-card > img {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+#flip-the-card > p {
+    margin: 5px;
+    font-size: 13px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
